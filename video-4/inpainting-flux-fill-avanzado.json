@@ -2,62 +2,8 @@
   "id": "3161cee4-db30-497d-b1bb-6aec85c63d0d",
   "revision": 0,
   "last_node_id": 60,
-  "last_link_id": 125,
+  "last_link_id": 128,
   "nodes": [
-    {
-      "id": 47,
-      "type": "LoraLoader",
-      "pos": [
-        -426.3897705078125,
-        -436.0093078613281
-      ],
-      "size": [
-        270,
-        126
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 102
-        },
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 114
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            103
-          ]
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            105,
-            106
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "LoraLoader"
-      },
-      "widgets_values": [
-        "flux\\TURBO-FLUX.safetensors",
-        1,
-        1
-      ]
-    },
     {
       "id": 26,
       "type": "FluxGuidance",
@@ -70,7 +16,7 @@
         58
       ],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -116,7 +62,7 @@
         {
           "name": "model",
           "type": "MODEL",
-          "link": 103
+          "link": 126
         }
       ],
       "outputs": [
@@ -150,13 +96,13 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 106
+          "link": 128
         }
       ],
       "outputs": [
@@ -182,74 +128,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 46,
-      "type": "UnetLoaderGGUF",
-      "pos": [
-        -427.7652282714844,
-        -231.90406799316406
-      ],
-      "size": [
-        270,
-        58
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            102
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
-        "Node name for S&R": "UnetLoaderGGUF"
-      },
-      "widgets_values": [
-        "flux\\flux1-fill-dev-Q8_0.gguf"
-      ]
-    },
-    {
-      "id": 54,
-      "type": "DualCLIPLoaderGGUF",
-      "pos": [
-        -418.89691162109375,
-        -99.64373779296875
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            114
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
-        "Node name for S&R": "DualCLIPLoaderGGUF"
-      },
-      "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf",
-        "clipLCLIPGFullFP32_zer0intVisionCLIPL.safetensors",
-        "flux"
-      ]
-    },
-    {
       "id": 38,
       "type": "InpaintModelConditioning",
       "pos": [
@@ -261,7 +139,7 @@
         138
       ],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -337,7 +215,7 @@
         58
       ],
       "flags": {},
-      "order": 2,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -368,67 +246,6 @@
       ]
     },
     {
-      "id": 3,
-      "type": "KSampler",
-      "pos": [
-        374.3225402832031,
-        67.20762634277344
-      ],
-      "size": [
-        344,
-        530
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 86
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 77
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 78
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 88
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [
-            7
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        630504012518253,
-        "randomize",
-        15,
-        1,
-        "euler",
-        "beta",
-        1
-      ]
-    },
-    {
       "id": 57,
       "type": "InpaintCropImproved",
       "pos": [
@@ -440,7 +257,7 @@
         626
       ],
       "flags": {},
-      "order": 6,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -527,13 +344,13 @@
         164.30999755859375
       ],
       "flags": {},
-      "order": 8,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 105
+          "link": 127
         }
       ],
       "outputs": [
@@ -559,49 +376,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 17,
-      "type": "LoadImage",
-      "pos": [
-        -520.2474975585938,
-        64.43159484863281
-      ],
-      "size": [
-        341.1788635253906,
-        387.3009033203125
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "slot_index": 0,
-          "links": [
-            122
-          ]
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "slot_index": 1,
-          "links": [
-            123
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.43",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "clipspace/clipspace-mask-1068790.699999988.png [input]",
-        "image"
-      ]
-    },
-    {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
@@ -613,7 +387,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -656,7 +430,7 @@
         613.3870849609375
       ],
       "flags": {},
-      "order": 15,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -687,7 +461,7 @@
         46
       ],
       "flags": {},
-      "order": 14,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -729,7 +503,7 @@
         596.5691528320312
       ],
       "flags": {},
-      "order": 4,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [],
@@ -740,6 +514,179 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 54,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        -464.5909729003906,
+        -219.590576171875
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            127,
+            128
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clipLCLIPGFullFP32_zer0intVisionCLIPL.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        -463.1780090332031,
+        -407.8260192871094
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            126
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "b3ec875a68d94b758914fd48d30571d953bb7a54",
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux\\flux1-fill-dev-Q8_0.gguf"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        374.3225402832031,
+        67.20762634277344
+      ],
+      "size": [
+        344,
+        530
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 86
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 77
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 78
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        630504012518253,
+        "randomize",
+        30,
+        1,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "type": "LoadImage",
+      "pos": [
+        -499.68511962890625,
+        70.14331817626953
+      ],
+      "size": [
+        341.1788635253906,
+        387.3009033203125
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            122
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": [
+            123
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.43",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "clipspace/clipspace-mask-1068790.699999988.png [input]",
+        "image"
+      ]
     }
   ],
   "links": [
@@ -824,46 +771,6 @@
       "LATENT"
     ],
     [
-      102,
-      46,
-      0,
-      47,
-      0,
-      "MODEL"
-    ],
-    [
-      103,
-      47,
-      0,
-      39,
-      0,
-      "MODEL"
-    ],
-    [
-      105,
-      47,
-      1,
-      23,
-      0,
-      "CLIP"
-    ],
-    [
-      106,
-      47,
-      1,
-      7,
-      0,
-      "CLIP"
-    ],
-    [
-      114,
-      54,
-      0,
-      47,
-      1,
-      "CLIP"
-    ],
-    [
       119,
       57,
       0,
@@ -918,16 +825,40 @@
       38,
       3,
       "IMAGE"
+    ],
+    [
+      126,
+      46,
+      0,
+      39,
+      0,
+      "MODEL"
+    ],
+    [
+      127,
+      54,
+      0,
+      23,
+      0,
+      "CLIP"
+    ],
+    [
+      128,
+      54,
+      0,
+      7,
+      0,
+      "CLIP"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.45,
+      "scale": 1.1671841070450009,
       "offset": [
-        2836.3247324625713,
-        1203.0290646023204
+        1180.4194029731602,
+        648.6512058740899
       ]
     },
     "frontendVersion": "1.23.4",
