@@ -1,0 +1,506 @@
+{
+  "id": "e2c8e6ec-9e8a-4a81-a240-7e7d2befc2bf",
+  "revision": 0,
+  "last_node_id": 36,
+  "last_link_id": 26,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "SeedVR2VideoUpscaler",
+      "pos": [
+        981.6211218256948,
+        112.56187904676133
+      ],
+      "size": [
+        270,
+        386
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 22
+        },
+        {
+          "name": "dit",
+          "type": "SEEDVR2_DIT",
+          "link": 11
+        },
+        {
+          "name": "vae",
+          "type": "SEEDVR2_VAE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12,
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2VideoUpscaler",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "seed": true,
+            "resolution": true,
+            "max_resolution": true,
+            "batch_size": true,
+            "uniform_batch_size": true,
+            "color_correction": true,
+            "temporal_overlap": true,
+            "prepend_frames": true,
+            "input_noise_scale": true,
+            "latent_noise_scale": true,
+            "offload_device": true,
+            "enable_debug": true
+          },
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        3976656871,
+        "randomize",
+        1088,
+        0,
+        1,
+        false,
+        "lab",
+        0,
+        0,
+        0,
+        0,
+        "cpu",
+        false
+      ]
+    },
+    {
+      "id": 15,
+      "type": "SaveImage",
+      "pos": [
+        1305.5004098880045,
+        106.53741651927821
+      ],
+      "size": [
+        304.26443573192137,
+        368.98569046143734
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "SaveImage",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "filename_prefix": true
+          },
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "LoadImage",
+      "pos": [
+        93.23936618245578,
+        114.59667833432586
+      ],
+      "size": [
+        274.080078125,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20,
+            22
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": []
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.68",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "image": true,
+            "upload": true
+          },
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "100000-103000-FLUX-tiny-_01079_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "Label (rgthree)",
+      "pos": [
+        57.893295218475956,
+        -202.07311898279934
+      ],
+      "size": [
+        1611.73828125,
+        120
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "SEEDVR2-UPSCALE-YasKad",
+      "properties": {
+        "fontSize": 120,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 14,
+      "type": "SeedVR2LoadDiTModel",
+      "pos": [
+        551.0122352409326,
+        193.76021313384567
+      ],
+      "size": [
+        307.6646484375,
+        202
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_DIT",
+          "type": "SEEDVR2_DIT",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadDiTModel",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model": true,
+            "device": true,
+            "blocks_to_swap": true,
+            "swap_io_components": true,
+            "offload_device": true,
+            "cache_model": true,
+            "attention_mode": true
+          },
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "seedvr2_ema_3b_fp8_e4m3fn.safetensors",
+        "cuda:0",
+        32,
+        false,
+        "cpu",
+        false,
+        "sdpa"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "MarkdownNote",
+      "pos": [
+        -886.4740906598007,
+        -171.56144154232828
+      ],
+      "size": [
+        875.7613197499659,
+        1536.5365544770932
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "NOTAS",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# MODELOS A DESCARGAR  \n\n## 🟣 Modelo SEEDVR2\n\n### Se descargan directamente desde el nodo.\nAconsejo probar con:\n- seedvr2_ema_3b_fp8_e4m3fn.safetensors\nQue es el mas chico de todos, e ir subiendo a los siguientes, por ejemplo:\n- seedvr2_ema_3b_fp16.safetensors\n- seedvr2_ema_7b_fp8_e4m3fn.safetensors\n- seedvr2_ema_7b_fp16.safetensors\n\n📁 **Se copia automaticamente en:** `ComfyUI/models/SEEEDVR2`  \n\n## 🟣 Modelo VAE\n### Este tambien se descarga automaticamente.\n\n---\n\n## Antes de meternos en los parametros, tengan en cuenta que este metodo usa enormes cantidades de vram. \n## Quedan alertados.\n\n---\n\n## Parametros a tener en cuenta\n\n---\n## NODO LOAD DIT MODEL\n\n\n### device\n- Para escoger la grafica, de tener varias.\n\n### blocks_to_swap\n- Va de 0 a 32, en el modelo de 3B y hasta 36 en el modelo de 7B, comienzen con 0 y vayan aumentandolo. Si les da un error de memoria antes de llegar al max, usen un valor menor.\n\n### swap_io_components\n- Lo mantengo en false, pero pueden activarlo tambien si tienen problemas de memoria\n\n\n### offload_device\n- Puede ser cpu, cuda o none. Trabaja en conjunto con blocks swap. Lo pongo a cpu para aligerar la grafica\n\n### cache_model\n- Tambien desactivado. En este caso es para preservar el modelo pero entre procesos por lotes\n\n### attention_mode\n- Lo dejo en sdpa, que la otra opcion que es flash attention, no la uso en mi sistema. \n\n## NODO LOAD VAE MODEL\n\n### device\n- Para escoger la grafica, de tener varias.\n\n### encode_tiled\n- Habilitar el encode con tiled, o sea con fragmentos para reducir uso de memoria\n\n### encode_tiled_size\n- Valor del tile, bajar si da errores de memoria\n\n### encode_tile_overlap\n- Cantidad de pixeles para el solapamiento. Disminuyanlo, de tener errores de memoria. Pero tengan en cuenta que este valor son los pixeles de solapamiento, de disminuirlos demasiado la imagen perdera consistencia.\n\n### decode_tile\n- Lo mismo, habilitar el tile pero ahora para el decode\n\n### decode_tile_size y decode_tile_overlap\n- Lo mismo que para el encode, disminuyanlo, de tener errores de memoria. \n\n### tile_debug\n- Habilita un log con mas detalle. Util para debuguear errores.\n\n### offload_device\n- Dispositivo donde se almacena el modelo vae, cuando no esta procesando. None, cpu, y cuda, son los valores a elegir.\n\n### cache_model\n- Desactivado por defecto, es para preservar el modelo en memoria, durante procesos por lotes.\n\n## NODO VIDEO UPSCALER\n\n\nY en el ultimo, nodo, tenemos la semilla, el modo de la semilla, la cantidad de procesos batch que queremos, el modo de correccion de color, y algunos otros valores que dejaremos por defecto, \nExpliquemos solamente la resolution y los noise scale\n\n### resolution \n- Este valor sera la resolucion deseada del lado de menor valor, o sea si tenemos una imagen de 720x480 y queremos hacer un escalado de 2X tendriamos que poner aca el valor de 480x2 que serian 960\n\n### input_noise_scale y latent_noise_scale. \n- Ambos estan en 0, y esto implica que la imagen final sera muy fiel al original, aumentando los valores del input_noise_scale ira introduciendo variaciones que podrian corregir algunos detalles. Sin embargo, tengan cuidado con el latent_noise_scale, ya que este influira en mayor medida en la imagen final. Ambos valores tienen un maximo de 1. En mi caso, solo vario ocasionalmente el valor del input_noise_scale, cuando quiero obtener alguna variacion con la imagen original.\n\n\n\n---\n\n[ENLACE DE INVITACION A DISCORD](https://discord.com/invite/BdAaXFw5KR)\n\n---\n\n## 🧩 Paquetes de nodos\n\n- **rgthree-comfy**\n- **ComfyUI-SeedVR2_VideoUpscaler**\n\n---\n\n\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "SeedVR2LoadVAEModel",
+      "pos": [
+        543.6129464518123,
+        481.2415251653327
+      ],
+      "size": [
+        312.866796875,
+        298
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "torch_compile_args",
+          "shape": 7,
+          "type": "TORCH_COMPILE_ARGS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEEDVR2_VAE",
+          "type": "SEEDVR2_VAE",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "seedvr2_videoupscaler",
+        "ver": "690cc39379c1481159ddd451368dbf2295930fc6",
+        "Node name for S&R": "SeedVR2LoadVAEModel",
+        "aux_id": "ainvfx/ComfyUI-SeedVR2_VideoUpscaler",
+        "ue_properties": {
+          "widget_ue_connectable": {
+            "model": true,
+            "device": true,
+            "encode_tiled": true,
+            "encode_tile_size": true,
+            "encode_tile_overlap": true,
+            "decode_tiled": true,
+            "decode_tile_size": true,
+            "decode_tile_overlap": true,
+            "tile_debug": true,
+            "offload_device": true,
+            "cache_model": true
+          },
+          "version": "7.3",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "ema_vae_fp16.safetensors",
+        "cuda:0",
+        true,
+        1024,
+        128,
+        true,
+        1024,
+        128,
+        "false",
+        "none",
+        false
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Image Comparer (rgthree)",
+      "pos": [
+        1002.5207329366109,
+        549.9787653858851
+      ],
+      "size": [
+        622.5855229684735,
+        607.6004463517631
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "dir": 3,
+          "name": "image_a",
+          "type": "IMAGE",
+          "link": 20
+        },
+        {
+          "dir": 3,
+          "name": "image_b",
+          "type": "IMAGE",
+          "link": 21
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "2b9eb36d3e1741e88dbfccade0e08137f7fa2bfb",
+        "comparer_mode": "Slide",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.3"
+        }
+      },
+      "widgets_values": [
+        [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_ziqpg_00033_.png&type=temp&subfolder=&rand=0.7712911812748692"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_ziqpg_00034_.png&type=temp&subfolder=&rand=0.6338955242581419"
+          }
+        ]
+      ]
+    }
+  ],
+  "links": [
+    [
+      10,
+      13,
+      0,
+      10,
+      2,
+      "SEEDVR2_VAE"
+    ],
+    [
+      11,
+      14,
+      0,
+      10,
+      1,
+      "SEEDVR2_DIT"
+    ],
+    [
+      12,
+      10,
+      0,
+      15,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      16,
+      0,
+      21,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      10,
+      0,
+      21,
+      1,
+      "IMAGE"
+    ],
+    [
+      22,
+      16,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "SEEDVR2",
+      "bounding": [
+        462.4540919333977,
+        3.4949196692508306,
+        1218.8686530322866,
+        1185.2962050910583
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000047,
+      "offset": [
+        1424.139006609422,
+        317.62280280273535
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.28.8",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
